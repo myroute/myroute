@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">app-note</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="snackbar_message">This message</string>
+    <string name="button_click">Click</string>
+    <string name="text_short_message">Short message</string>
+    <string name="text_long_message">Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long message</string>
+</resources>

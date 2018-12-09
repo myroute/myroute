@@ -1,0 +1,1 @@
+include ':app-sample', ':core-design', ':core-architecture', ':app-sso', ':app-note'

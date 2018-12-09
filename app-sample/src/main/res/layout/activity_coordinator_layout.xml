@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BBBBBB">
+
+    <TextView
+            android:id="@+id/tv_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SWIPE ME"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:padding="30dp"
+            android:layout_margin="5dp"
+            android:background="#ff0000"
+            android:layout_gravity="center"
+            app:layout_behavior="@string/bottom_sheet_behavior" />
+    <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5e71b7"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textColor="#c8d5fd"
+    />
+
+    <LinearLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:behavior_peekHeight="72dp"
+            app:behavior_hideable="false"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/text_short_message"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:rating="3.5" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_long_message" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_anchor="@+id/bottom_sheet"
+            app:layout_anchorGravity="top|right" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.view.SampleActivity">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:layout_collapseMode="pin"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/sample_recycler_view"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <LinearLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:behavior_peekHeight="72dp"
+            app:behavior_hideable="false"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/text_short_message"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:rating="3.5" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_long_message" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_dialog_email"
+            app:layout_anchor="@+id/bottom_sheet"
+            app:layout_anchorGravity="top|right" />
+
+</android.support.design.widget.CoordinatorLayout>
