@@ -33,6 +33,8 @@
 
         <activity android:name=".architecture.layout.GlobalLayoutSampleActivity"/>
         <activity android:name=".android.thread.HandlerSampleActivity"/>
+        <activity android:name=".design.drawerlayout.DrawerLayoutSampleActivity"
+                  android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".design.toolbar.ToolbarSampleActivity"
                   android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".design.snackbar.SnackbarSampleActivity"/>

@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-            android:id="@+id/item1"
-            android:icon="@mipmap/ic_launcher_round"
-            android:title="item1"/>
 
-    <item
-            android:id="@+id/item2"
-            android:icon="@mipmap/ic_launcher_round"
-            android:title="item2"/>
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/main_item1"
+                android:checked="true"
+                android:icon="@android:drawable/ic_dialog_alert"
+                android:title="MAIN ITEM1" />
+        <item
+                android:id="@+id/main_item2"
+                android:icon="@android:drawable/ic_dialog_dialer"
+                android:title="MAIN ITEM2" />
+        <item
+                android:id="@+id/main_item3"
+                android:icon="@android:drawable/ic_dialog_email"
+                android:title="MAIN ITEM3" />
+    </group>
 
-    <item
-            android:id="@+id/item3"
-            android:icon="@mipmap/ic_launcher_round"
-            android:title="item3"/>
+    <item android:title="SUB MENU">
+        <menu>
+            <item
+                    android:id="@+id/sub_item1"
+                    android:icon="@android:drawable/ic_dialog_info"
+                    android:title="SUB_ITEM1" />
+            <item
+                    android:id="@+id/sub_item2"
+                    android:icon="@android:drawable/ic_dialog_map"
+                    android:title="SUB_ITEM2" />
+        </menu>
+    </item>
+
 </menu>

@@ -2,13 +2,13 @@ package kr.co.myroute.sample.design.drawerlayout;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,20 +23,34 @@ public class DrawerLayoutSampleActivity extends AppCompatActivity {
 	DrawerLayout mDrawerLayout;
 	@BindView(R.id.toolbar)
 	Toolbar mToolbar;
+	@BindView(R.id.navigation_view)
+	NavigationView mNavigationView;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_toolbar);
+		setContentView(R.layout.activity_drawer_layout);
 		ButterKnife.bind(this);
 
 		setSupportActionBar(mToolbar);
 
-		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
-			mDrawerLayout, mToolbar, R.string.app_name, R.string.button_click);
-		mDrawerLayout.addDrawerListener(toggle);
-		toggle.syncState();
+//		ActionBar actionBar = getSupportActionBar();
+
+		//		if (actionBar != null) {
+		//			actionBar.setHomeAsUpIndicator(android.R.drawable.ic_menu_add);
+		//			actionBar.setDisplayHomeAsUpEnabled(true);
+		//		}
+
+		ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
+		mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
+		actionBarDrawerToggle.syncState();
+
+		mNavigationView.setNavigationItemSelectedListener((MenuItem menuItem) -> {
+			menuItem.setChecked(true);
+			mDrawerLayout.closeDrawers();
+			return true;
+		});
 	}
 
 	@Override
@@ -48,49 +62,29 @@ public class DrawerLayoutSampleActivity extends AppCompatActivity {
 		}
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater menuInflater = getMenuInflater();
-		menuInflater.inflate(R.menu.menu_toolbar, menu);
+	//	@Override
+	//	public boolean onCreateOptionsMenu(Menu menu) {
+	//		MenuInflater menuInflater = getMenuInflater();
+	//		menuInflater.inflate(R.menu.menu_toolbar, menu);
+	//
+	//		return true;
+	//	}
 
-		return true;
-	}
-
-	/*private Boolean getToggle(@NonNull View view) {
-		Boolean toggle = view.getTag(R.id.TOGGLE_ID) != null ? (Boolean) view.getTag(R.id.TOGGLE_ID) : false;
-		return toggle;
-	}
-
-	private void setToggle(@NonNull View view, Boolean value) {
-		view.setTag(R.id.TOGGLE_ID, value);
-	}
-
-	@OnClick(R.id.toolbar_button1)
-	void onToolbarButton1Click(View view) {
-	}
-
-	@OnClick(R.id.toolbar_button2)
-	void onToolbarButton2Click(View view) {
-		boolean toggle = getToggle(view);
-
-		if (toggle) {
-			setToggle(view, false);
-			getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-		} else {
-			setToggle(view, true);
-
-			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-			getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_launcher_background);
-		}
-	}
-
-	@OnClick(R.id.toolbar_button3)
-	void onToolbarButton3Click(View view) {
-
-	}
-
-	@OnClick(R.id.toolbar_button4)
-	void onToolbarButton4Click(View view) {
-
-	}*/
+	//	@Override
+	//	public boolean onOptionsItemSelected(MenuItem item) {
+	//		// Handle action bar item clicks here. The action bar will
+	//		// automatically handle clicks on the Home/Up button, so long
+	//		// as you specify a parent activity in AndroidManifest.xml.
+	//		int id = item.getItemId();
+	//
+	//		switch (id) {
+	//			case android.R.id.home:
+	//				mDrawerLayout.openDrawer(GravityCompat.START);
+	//				return true;
+	//			case R.id.action_settings:
+	//				return true;
+	//		}
+	//
+	//		return super.onOptionsItemSelected(item);
+	//	}
 }

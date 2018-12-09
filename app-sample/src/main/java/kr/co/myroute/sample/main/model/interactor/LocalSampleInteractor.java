@@ -8,6 +8,7 @@ import kr.co.myroute.sample.architecture.layout.GlobalLayoutSampleActivity;
 import kr.co.myroute.sample.architecture.lifecycle.LifeCycleSampleActivity;
 import kr.co.myroute.sample.architecture.rx.RxSampleActivity;
 import kr.co.myroute.sample.design.coordinatelayout.CoordinatorLayoutSampleActivity;
+import kr.co.myroute.sample.design.drawerlayout.DrawerLayoutSampleActivity;
 import kr.co.myroute.sample.design.snackbar.SnackbarSampleActivity;
 import kr.co.myroute.sample.design.toolbar.ToolbarSampleActivity;
 import kr.co.myroute.sample.library.autovalue.AutoValueSampleActivity;
@@ -41,6 +42,7 @@ public class LocalSampleInteractor implements SampleInteractor {
 
 		// Design
 		sampleList.add(SamplePropDTO.create("Toobar", new Intent(context, ToolbarSampleActivity.class)));
+		sampleList.add(SamplePropDTO.create("DrawerLayout", new Intent(context, DrawerLayoutSampleActivity.class)));
 		sampleList.add(SamplePropDTO.create("Snackbar", new Intent(context, SnackbarSampleActivity.class)));
 		sampleList.add(SamplePropDTO.create("CoordinatorLayout", new Intent(context, CoordinatorLayoutSampleActivity.class)));
 
